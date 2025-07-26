@@ -1,8 +1,209 @@
-<!-- index.html -->
+
 <!DOCTYPE html>
-<html>
-  <head><title>Hello</title></head>
-  <body>
-    <h1>Hello from Azure Static Web Apps!</h1>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yoga with Aanya</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      scroll-behavior: smooth;
+      background: linear-gradient(to bottom, #fffde7, #e0f7fa);
+      color: #333;
+    }
+
+    header {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                  url('https://source.unsplash.com/1600x900/?yoga') no-repeat center/cover;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    header p {
+      font-size: 1.3rem;
+    }
+
+    nav {
+      background: linear-gradient(to right, #81d4fa, #ba68c8);
+      padding: 1rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .about, .classes, .schedule, .contact, .testimonials {
+      background: linear-gradient(to right, #f3e5f5, #e1f5fe);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #444;
+    }
+
+    .classes ul {
+      list-style: square;
+      padding-left: 1.5rem;
+    }
+
+    .schedule table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .schedule th, .schedule td {
+      border: 1px solid #bbb;
+      padding: 0.8rem;
+      text-align: center;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    form button {
+      background: #64b5f6;
+      border: none;
+      color: white;
+      padding: 0.8rem 2rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .testimonial {
+      background: white;
+      padding: 1rem;
+      border-left: 5px solid #81d4fa;
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      background: linear-gradient(to right, #b2ebf2, #ce93d8);
+      text-align: center;
+      padding: 1rem;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      nav a {
+        display: inline-block;
+        margin: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header id="home">
+    <h1>Yoga with Aanya</h1>
+    <p>Find your strength, balance, and inner peace</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#classes">Classes</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#contact">Contact</a>
+    <a href="#testimonials">Testimonials</a>
+  </nav>
+
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>Hello! I’m Aanya, a certified yoga instructor with over 8 years of experience. I specialize in Hatha, Vinyasa, and Restorative Yoga. My goal is to help you embrace wellness and mindfulness through the power of yoga.</p>
+  </section>
+
+  <section id="classes" class="classes">
+    <h2>Classes Offered</h2>
+    <ul>
+      <li><strong>Beginner Yoga:</strong> Perfect for new students to learn the basics.</li>
+      <li><strong>Intermediate Flow:</strong> Build strength and flexibility with dynamic flows.</li>
+      <li><strong>Restorative Yoga:</strong> Deep relaxation and stress relief.</li>
+    </ul>
+  </section>
+
+  <section id="schedule" class="schedule">
+    <h2>Class Schedule</h2>
+    <table>
+      <tr><th>Day</th><th>Time</th><th>Location</th></tr>
+      <tr><td>Monday</td><td>7:00 AM</td><td>Sunrise Studio</td></tr>
+      <tr><td>Wednesday</td><td>6:00 PM</td><td>Online (Zoom)</td></tr>
+      <tr><td>Saturday</td><td>9:00 AM</td><td>Community Center</td></tr>
+    </table>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <form onsubmit="handleForm(event)">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <section id="testimonials" class="testimonials">
+    <h2>What My Students Say</h2>
+    <div class="testimonial">
+      <p>\"Aanya brings such peace and clarity to her sessions. I feel stronger and calmer after each class!\" – Meera</p>
+    </div>
+    <div class="testimonial">
+      <p>\"Her restorative yoga helped me recover from anxiety and burnout. Grateful for her guidance.\" – Rohan</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Yoga with Aanya • All rights reserved
+  </footer>
+
+  <script>
+    function handleForm(event) {
+      event.preventDefault();
+      alert(\"Thanks for your message! I’ll get back to you soon.\");
+    }
+  </script>
+
+</body>
 </html>
